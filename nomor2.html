@@ -1,0 +1,34 @@
+<script>
+    var kondisi = true
+    var arr = []
+    var max = 0
+    var min = 0
+    do {
+        var angka = parseInt(prompt('Masukkan angka'))
+        if ((isNaN(angka))){
+            kondisi = false
+        }else{
+            if(angka > max){
+                max = angka
+            }
+            if(min == 0 && angka == 0){
+                min = angka
+            }
+            if(min < angka){
+                min = min
+            }else{
+                min = angka
+            }
+            arr.push(angka)
+        }
+    } while (kondisi);
+
+    if (arr.length == 1){
+        min = max
+    }
+
+    var sortir = arr.sort(function(a,b){return a-b})
+    console.log(arr)
+    console.log('Angka terendah = ' + min)
+    console.log('Angka tertinggi = ' + max)
+</script>

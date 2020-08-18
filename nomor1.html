@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomor 1</title>
+</head>
+<body>
+    <h1>Drawing Tools</h1>
+    1. Persegi <br><br>
+    2. Segitiga Siku2 Rata Kiri<br><br>
+    3. Segitiga Siku2 Rata Kanan<br><br>
+    Jenis Bangunan <br><br>
+    <input type="number" id="jenisBangunan"> <br><br>
+    Ukuran <br><br>
+    <input type="number" id="Ukuran"> <br><br>
+    <input type="button" value="Lihat" onclick="onLihatClick()">
+    <p id="hasil"></p>
+    
+</body>
+<script>
+const onLihatClick=()=>{
+    var jenis = document.getElementById('jenisBangunan').value
+    var ukuran = parseInt(document.getElementById('Ukuran').value)
+    var x=''
+
+    if(jenis == 1){
+        for(i=0;i<ukuran;i++){
+            for(j=0;j<=ukuran;j++){ // looping di dalem yg dikerjain duluan
+                x+='*&nbsp;'
+            }
+            x+='<br>'
+        }
+    }
+
+    if (jenis == 2){
+        for(i=0;i<ukuran;i++){
+            for(j=0;j<=i;j++){ // looping di dalem yg dikerjain duluan
+                x+='*&nbsp;'
+            }
+            x+='<br>'
+        }
+
+    }
+
+    if(jenis == 3){
+        for(i=0;i<ukuran;i++){
+            for(j=i;j<ukuran;j++){ // banyak --> kecil
+                x += '&nbsp; &nbsp;'
+            }
+            for(k=0;k<i+1;k++){ // kecil --> banyak
+                x += '*&nbsp;'
+            }
+            x+='<br>'
+        }
+    }
+    
+    document.getElementById('hasil').innerHTML = x
+
+}
+</script>
+</html>
